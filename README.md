@@ -7,7 +7,7 @@ Added a header that shows the company logo, event name, search bar, and email bu
 The search bar searches content by name.
 Added an email button that shows the fields that the user must fill in to submit the selected content._
 
-### The following APIs were used:
+### The following APIs were used
 
 * ___
 
