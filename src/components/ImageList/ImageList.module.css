@@ -1,0 +1,14 @@
+.ContentThumbnailImageList {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.ContentThumbnail {
+  object-fit: cover;
+}
+
+.imageBlock {
+  padding-bottom: 25px;
+}
