@@ -1,4 +1,26 @@
+.menu {
+  width: 30%;
+}
+
 .categoriesMenu {
-  list-style: none;
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  /* list-style: none; */
+  cursor: pointer;
   color: white;
+  border: 1px solid white;
+}
+
+.categoriesItem {
+  height: 67px;
+  line-height: 67px;
+  border-bottom: 1px solid white;
+  transition: 0.3s;
+}
+
+.categoriesItem:hover {
+  background: white;
+  color: black;
 }

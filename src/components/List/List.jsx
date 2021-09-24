@@ -24,7 +24,7 @@ function List() {
   //   console.log("Ushadir", appContents && appContents[0].contentInf);
 
   return (
-    <>
+    <div className={classes.list}>
       {/* <h2>{appContents && appContents[0].catName}</h2> */}
 
       {loading ? <p>loading ...</p> : null}
@@ -44,7 +44,7 @@ function List() {
             );
           })
         : null}
-    </>
+    </div>
   );
 }
 

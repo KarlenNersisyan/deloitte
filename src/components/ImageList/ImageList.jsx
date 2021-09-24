@@ -58,7 +58,7 @@ function ImageList() {
                               {el.contentInf
                                 ? el.contentInf.map((elem) => {
                                     return (
-                                      <div key={elem.id}>
+                                      <div key={elem.id} className={classes.textName}>
                                         <p>{elem.name}</p>
                                       </div>
                                     );

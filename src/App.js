@@ -1,7 +1,9 @@
 // import { useEffect, useState } from "react";
+import classNames from "classnames";
 import Header from "./components/Header/Header";
 import List from "./components/List/List";
 import Menu from "./components/Menu/Menu";
+import classes from "./App.module.css";
 // import { getCategories, getCoreFields } from "./service/service";
 
 function App() {
@@ -17,9 +19,11 @@ function App() {
 
   return (
     <>
-      {/* <Header /> */}
-      {/* <Menu /> */}
-      <List />
+      <Header />
+      <div className={classes.App}>
+        <Menu />
+        <List />
+      </div>
     </>
   );
 }

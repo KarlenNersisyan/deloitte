@@ -22,17 +22,21 @@ function Menu() {
   }, []);
 
   return (
-    <>
+    <div className={classes.menu}>
       <ul className={classes.categoriesMenu}>
         {loading ? <p>loading ...</p> : null}
         {error && <p>ERROR ...</p>}
         {categories
           ? categories.map((e) => {
-              return <li key={generateId}>{e.name}</li>;
+              return (
+                <li className={classes.categoriesItem} key={generateId}>
+                  {e.name}
+                </li>
+              );
             })
           : null}
       </ul>
-    </>
+    </div>
   );
 }
 
