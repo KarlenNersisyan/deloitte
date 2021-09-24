@@ -11,7 +11,7 @@ Added an email button that shows the fields that the user must fill in to submit
 
 * ___
 
-    * https://app.highattendance.com/get-comp-logo/2731
+    * https://app.highattendance.com/app-contents/jVV3Q?appId=2731&eventId=2570
 
     * https://app.highattendance.com/get-app-fields/2731?eventId=2570
 
