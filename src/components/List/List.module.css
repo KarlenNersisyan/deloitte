@@ -1,5 +1,6 @@
 .list {
   width: 70%;
+  padding: 0 0 0 40px;
 }
 
 .nameCompany {
@@ -7,5 +8,49 @@
 }
 
 .descriptionCompany {
+  color: white;
+  padding-right: 5px;
+}
+
+.infoBlock {
+  display: flex;
+  flex-wrap: wrap;
+  padding-right: 230px;
+  justify-content: space-between;
+}
+
+.textName {
+  width: 310px;
+  height: 270px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.imageBlockItem {
+  margin-top: 30px;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.wrapperItem {
+  width: 60px;
+  cursor: pointer;
+  border-radius: 3px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  background: white;
+  color: black;
+  border: 1px solid black;
+  transition: 0.3s;
+}
+
+.wrapperItem:hover {
+  background: green;
   color: white;
 }

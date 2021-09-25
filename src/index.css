@@ -13,8 +13,39 @@ code {
     monospace;
 }
 
-.fa-bars,
-.fa-search,
+.fa-search {
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
 .fa-envelope {
+  color: white;
+}
+
+.fa-bars {
+  color: white;
+  font-size: 30px;
+  line-height: 50px;
+  width: 50px;
+  text-align: center;
+  height: 50px;
+  transition: 0.3s;
+}
+
+.fa-bars:hover {
+  cursor: pointer;
+  border: 1px solid white;
+}
+
+p {
+  width: 200px;
+  white-space: nowrap;
+  color: white;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+b {
   color: white;
 }
