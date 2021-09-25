@@ -3,11 +3,13 @@ import { useEffect, useMemo, useState } from "react";
 import Header from "./components/Header/Header";
 import List from "./components/List/List";
 import Menu from "./components/Menu/Menu";
-import { getAppContents } from "./service/service";
+import { getAppContents, getContentThumbnail } from "./service/service";
 
 import classes from "./App.module.css";
+import ImageList from "./components/ImageList/ImageList";
 
 function App() {
+  const [contentThumbnail, setContentThumbnail] = useState([]);
   const [appContents, setAppContents] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
@@ -31,17 +33,34 @@ function App() {
       });
   }, []);
 
+  useEffect(() => {
+    getContentThumbnail()
+      .then((res) => {
+        setContentThumbnail(res);
+        setLoading(false);
+      })
+      .catch((e) => {
+        setLoading(false);
+        setError(true);
+      });
+  }, []);
+
   return (
     <>
       <Header />
       <div className={classes.App}>
-        <Menu setFilter={setFilter} />
+        <Menu setFilter={setFilter} setContentThumbnail={setContentThumbnail} />
         <List
           filteredContent={filteredContent}
           error={error}
           loading={loading}
         />
       </div>
+      <ImageList
+        error={error}
+        loading={loading}
+        contentThumbnail={contentThumbnail}
+      />
     </>
   );
 }

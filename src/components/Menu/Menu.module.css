@@ -2,6 +2,14 @@
   width: 30%;
 }
 
+.Show {
+  display: none;
+}
+
+.isShow {
+  display: block;
+}
+
 .categoriesMenu {
   min-height: 600px;
   display: flex;

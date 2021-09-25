@@ -5,7 +5,7 @@ import generateId from "../../helpers/idGenerator.helper";
 import classes from "./Menu.module.css";
 import Loading from "../Loading/Loading";
 
-function Menu({ setFilter }) {
+function Menu({ setFilter, setContentThumbnail }) {
   const [categories, setCategories] = useState("");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
@@ -25,8 +25,14 @@ function Menu({ setFilter }) {
   return (
     <div className={classes.menu}>
       <ul className={classes.categoriesMenu}>
+        <li
+          className={classes.categoriesItem}
+          onClick={() => setContentThumbnail()}
+        >
+          Home
+        </li>
         <li className={classes.categoriesItem} onClick={() => setFilter("ALL")}>
-          ALL
+          All
         </li>
         {loading && <Loading />}
         {error && <p>ERROR ...</p>}

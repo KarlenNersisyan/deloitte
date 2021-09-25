@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { emailIcon, menuIcon, searchIcon } from "../../constants/utils";
 import { getCategories } from "../../service/service";
-import Loading from "../Loading/Loading";
 
 import classes from "./Header.module.css";
 
