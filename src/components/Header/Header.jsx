@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import { emailIcon, menuIcon, searchIcon } from "../../constants/utils";
-import classes from "./Header.module.css";
 import { getCategories } from "../../service/service";
+import Loading from "../Loading/Loading";
+
+import classes from "./Header.module.css";
 
 function Header() {
   const [headerElement, setHeaderElement] = useState("");
@@ -11,7 +13,6 @@ function Header() {
   useEffect(() => {
     getCategories()
       .then((res) => {
-        console.log(res);
         setHeaderElement(res);
         setLoading(false);
       })
@@ -27,10 +28,14 @@ function Header() {
         <i className={menuIcon}></i>
       </div>
       <div>
+        {loading && <b>Loading ...</b>}
+        {error && <p>ERROR ...</p>}
         <img src={headerElement.header_logo} className={classes.compLogo}></img>
       </div>
       <div>
-        <p className={classes.text}>{headerElement && headerElement.title.split("/")[0]}</p>
+        <p className={classes.text}>
+          {headerElement && headerElement.title.split("/")[0]}
+        </p>
       </div>
       <div>
         <i className={searchIcon}></i>

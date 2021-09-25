@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import classes from "./ImageList.module.css";
 import { getAppContents, getContentThumbnail } from "../../service/service";
 import generateId from "../../helpers/idGenerator.helper";
+
+import classes from "./ImageList.module.css";
 
 function ImageList() {
   const [contentThumbnail, setContentThumbnail] = useState("");
@@ -24,7 +25,6 @@ function ImageList() {
   useEffect(() => {
     getContentThumbnail()
       .then((res) => {
-        console.log("Yaho", res);
         setContentThumbnail(res);
         setLoading(false);
       })
@@ -37,42 +37,39 @@ function ImageList() {
   return (
     <>
       <div className={classes.ContentThumbnailImageList}>
-        {loading ? <p>loading ...</p> : null}
+        {loading && <p>loading ...</p>}
         {error && <p>ERROR ...</p>}
-        {contentThumbnail
-          ? contentThumbnail.map((e) => {
-              return (
-                <>
-                  <div key={e.id} className={classes.imageBlock}>
-                    <img
-                      className={classes.ContentThumbnail}
-                      src={e.url}
-                      width="300"
-                      height="160"
-                    />
-                    {appContents
-                      ? appContents.map((el, i) => {
-                          return (
-                            <div key={i}>
-                              {" "}
-                              {el.contentInf
-                                ? el.contentInf.map((elem) => {
-                                    return (
-                                      <div key={elem.id} className={classes.textName}>
-                                        <p>{elem.name}</p>
-                                      </div>
-                                    );
-                                  })
-                                : null}
-                            </div>
-                          );
-                        })
-                      : null}
-                  </div>
-                </>
-              );
-            })
-          : null}
+        {contentThumbnail &&
+          contentThumbnail.map((e) => {
+            return (
+              <>
+                <div key={e.id} className={classes.imageBlock}>
+                  <img
+                    className={classes.ContentThumbnail}
+                    src={e.url}
+                    width="300"
+                    height="160"
+                  />
+                  {appContents &&
+                    appContents.map((el) => {
+                      return (
+                        <div key={generateId}>
+                          {" "}
+                          {el.contentInf &&
+                            el.contentInf.map((elem) => {
+                              return (
+                                <div key={elem.id} className={classes.textName}>
+                                  <p>{elem.name}</p>
+                                </div>
+                              );
+                            })}
+                        </div>
+                      );
+                    })}
+                </div>
+              </>
+            );
+          })}
       </div>
     </>
   );
