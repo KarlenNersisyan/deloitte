@@ -62,7 +62,7 @@ function App() {
         setFilter={setFilter}
         handleEmailClick={handleEmailClick}
       />
-      <Contact isEmail={isEmail} />
+      <Contact isEmail={isEmail} handleEmailClick={handleEmailClick} />
       <div className={classes.App}>
         <Menu
           setFilter={setFilter}
