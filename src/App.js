@@ -17,6 +17,7 @@ function App() {
   const [filter, setFilter] = useState("ALL");
   const [isActive, setIsActive] = useState(false);
   const [isEmail, setIsEmail] = useState(false);
+  const [count, setCount] = useState(0);
 
   const handleEmailClick = () => {
     setIsEmail(!isEmail);
@@ -24,6 +25,10 @@ function App() {
 
   const handleBtnClick = () => {
     setIsActive(!isActive);
+  };
+
+  const addSum = () => {
+    setCount(count + 1);
   };
 
   const filteredContent = useMemo(() => {
@@ -61,6 +66,7 @@ function App() {
         handleBtnClick={handleBtnClick}
         setFilter={setFilter}
         handleEmailClick={handleEmailClick}
+        count={count}
       />
       <Contact isEmail={isEmail} handleEmailClick={handleEmailClick} />
       <div className={classes.App}>
@@ -73,6 +79,7 @@ function App() {
           filteredContent={filteredContent}
           error={error}
           loading={loading}
+          addSum={addSum}
         />
       </div>
       {/* <ImageList

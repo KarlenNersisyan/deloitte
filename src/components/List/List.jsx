@@ -3,7 +3,7 @@ import Loading from "../Loading/Loading";
 
 import classes from "./List.module.css";
 
-function List({ filteredContent, loading, error }) {
+function List({ filteredContent, loading, error,addSum }) {
   return (
     <div className={classes.list}>
       {loading && <Loading />}
@@ -32,7 +32,7 @@ function List({ filteredContent, loading, error }) {
                       </div>
                       <div className={classes.wrapper}>
                         <p>{elem.name.split().splice(0, 20)}</p>
-                        <div className={classes.wrapperItem}>ADD</div>
+                        <div onClick={addSum} className={classes.wrapperItem}>ADD</div>
                       </div>
                     </div>
                   );
