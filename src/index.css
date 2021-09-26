@@ -39,6 +39,45 @@ code {
   border: 1px solid white;
 }
 
+.fa-smile-wink {
+  font-size: 80px;
+  color: rgb(196, 134, 20);
+  transition: 0.1s;
+  cursor: pointer;
+}
+
+.fa-smile-wink:hover {
+  color: orange;
+}
+
+.fa-github {
+  color: black;
+}
+
+.fa-linkedin {
+  color: rgb(65, 65, 173);
+}
+
+.fa-twitter {
+  color: aqua;
+}
+
+.fa-facebook-square {
+  color: blue;
+}
+
+.fa-instagram {
+  color: palevioletred;
+}
+
+.fa-telegram {
+  color: powderblue;
+}
+
+.fa-youtube {
+  color: red;
+}
+
 p {
   width: 200px;
   white-space: nowrap;

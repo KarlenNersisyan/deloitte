@@ -1,0 +1,68 @@
+.hide {
+  display: none;
+}
+
+.formContainerMessage {
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%);
+  width: 700px;
+  min-height: 550px;
+  border-radius: 5px;
+  border: 1px solid grey;
+  margin: 40px auto;
+  box-shadow: 0 0 15px white;
+  background: honeydew;
+  z-index: 9999;
+}
+
+h2 {
+  color: white;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  border-bottom: 2px solid grey;
+  background: green;
+}
+
+.headerElement {
+  font-size: 31px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.headerElement:hover {
+  color: white;
+}
+
+.headerElement3 {
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.1s;
+}
+
+.headerElement3:hover {
+  color: white;
+}
+
+.info {
+  font-style: oblique;
+  padding: 35px;
+}
+
+.favicon {
+  padding-left: 37px;
+}
+
+.contacts {
+  display: flex;
+  font-size: 40px;
+  align-items: center;
+  justify-content: space-evenly;
+}

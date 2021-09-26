@@ -28,7 +28,8 @@
     ],
     "rules": {
       "jsx-a11y/alt-text": "off",
-      "no-unused-vars": "off"
+      "no-unused-vars": "off",
+      "react/jsx-no-target-blank": "off"
     }
   },
   "browserslist": {
