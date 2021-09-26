@@ -13,8 +13,13 @@ function App() {
   const [appContents, setAppContents] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
-
   const [filter, setFilter] = useState("ALL");
+  const [isActive, setIsActive] = useState(false);
+
+  const handleBtnClick = () => {
+    setIsActive(!isActive);
+  };
+
 
   const filteredContent = useMemo(() => {
     if (filter === "ALL") return appContents;
@@ -47,9 +52,9 @@ function App() {
 
   return (
     <>
-      <Header />
+      <Header handleBtnClick={handleBtnClick}/>
       <div className={classes.App}>
-        <Menu setFilter={setFilter} setContentThumbnail={setContentThumbnail} />
+        <Menu setFilter={setFilter} setContentThumbnail={setContentThumbnail} isActive={isActive} />
         <List
           filteredContent={filteredContent}
           error={error}

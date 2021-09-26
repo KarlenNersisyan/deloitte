@@ -4,7 +4,7 @@ import { getCategories } from "../../service/service";
 
 import classes from "./Header.module.css";
 
-function Header() {
+function Header({handleBtnClick}) {
   const [headerElement, setHeaderElement] = useState("");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
@@ -23,7 +23,7 @@ function Header() {
 
   return (
     <div className={classes.header}>
-      <div>
+      <div onClick={handleBtnClick}>
         <i className={menuIcon}></i>
       </div>
       <div>

@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
+import cn from 'classnames';
+
 import { getCategories } from "../../service/service";
 import generateId from "../../helpers/idGenerator.helper";
 
 import classes from "./Menu.module.css";
 import Loading from "../Loading/Loading";
 
-function Menu({ setFilter, setContentThumbnail }) {
+function Menu({ setFilter, setContentThumbnail,isActive }) {
   const [categories, setCategories] = useState("");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
@@ -23,7 +25,7 @@ function Menu({ setFilter, setContentThumbnail }) {
   }, []);
 
   return (
-    <div className={classes.menu}>
+    <div className={cn([classes.menu], { [classes.hide]: !isActive })}>
       <ul className={classes.categoriesMenu}>
         <li
           className={classes.categoriesItem}

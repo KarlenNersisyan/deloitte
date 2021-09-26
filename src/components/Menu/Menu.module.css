@@ -2,12 +2,8 @@
   width: 30%;
 }
 
-.Show {
+.hide {
   display: none;
-}
-
-.isShow {
-  display: block;
 }
 
 .categoriesMenu {
