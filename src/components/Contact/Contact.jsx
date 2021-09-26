@@ -1,17 +1,27 @@
 import React from "react";
+import { useState } from "react";
+import cn from "classnames";
+
 import classes from "./Contact.module.css";
 
 export default function Contact() {
+  const [close, setClose] = useState(true);
+  const handleCloseClick = () => {
+    setClose(!close);
+  };
+
   return (
-    <div className={classes.backContainer}>
+    <div className={cn([classes.backContainer], { [classes.hide]: !close })}>
       <div className={classes.formContainer}>
         <div className={classes.header}>
           <div>
             <span className={classes.headerElement}> + </span>
             <span className={classes.headerElement}> - </span>
           </div>
-          <h3> Contact Information </h3>{" "}
-          <button className={classes.headerElement3}> X </button>
+          <h3> Contact Information </h3>
+          <button onClick={handleCloseClick} className={classes.headerElement3}>
+            X
+          </button>
         </div>
         <form action="/#">
           <div className={classes.former}>
