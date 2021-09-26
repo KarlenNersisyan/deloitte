@@ -20,7 +20,6 @@ function App() {
     setIsActive(!isActive);
   };
 
-
   const filteredContent = useMemo(() => {
     if (filter === "ALL") return appContents;
     return appContents.filter((content) => content.catName === filter);
@@ -52,9 +51,13 @@ function App() {
 
   return (
     <>
-      <Header handleBtnClick={handleBtnClick}/>
+      <Header handleBtnClick={handleBtnClick} setFilter={setFilter} />
       <div className={classes.App}>
-        <Menu setFilter={setFilter} setContentThumbnail={setContentThumbnail} isActive={isActive} />
+        <Menu
+          setFilter={setFilter}
+          setContentThumbnail={setContentThumbnail}
+          isActive={isActive}
+        />
         <List
           filteredContent={filteredContent}
           error={error}

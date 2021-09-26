@@ -4,7 +4,7 @@ import { getCategories } from "../../service/service";
 
 import classes from "./Header.module.css";
 
-function Header({handleBtnClick}) {
+function Header({ handleBtnClick, setFilter }) {
   const [headerElement, setHeaderElement] = useState("");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
@@ -26,7 +26,7 @@ function Header({handleBtnClick}) {
       <div onClick={handleBtnClick}>
         <i className={menuIcon}></i>
       </div>
-      <div>
+      <div onClick={() => setFilter("ALL")}>
         {loading && <b>Loading ...</b>}
         {error && <p>ERROR ...</p>}
         <img src={headerElement.header_logo} className={classes.compLogo}></img>
@@ -36,7 +36,11 @@ function Header({handleBtnClick}) {
           {headerElement && headerElement.title.split("/")[0]}
         </p>
       </div>
-      <div>
+      <div
+        onClick={() => {
+          alert("Hello everyone, good start to the day.");
+        }}
+      >
         <i className={searchIcon}></i>
       </div>
       <div className={classes.emailButton}>
