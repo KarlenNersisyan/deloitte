@@ -39,30 +39,30 @@ export default function Message({ message, handleMessage }) {
       </div>
 
       <div className={classes.contacts}>
-        <a target="_blank" href="https://github.com/KarlenNersisyan">
+        <a target="_blank" rel="noreferrer" href="https://github.com/KarlenNersisyan">
           <i className="fab fa-github"></i>
         </a>
-        <a target="_blank" href="https://www.linkedin.com/in/karlen-nersisyan/">
+        <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/karlen-nersisyan/">
           <i className="fab fa-linkedin"></i>
         </a>
 
-        <a target="_blank" href="https://twitter.com/nersisyan_karl">
+        <a target="_blank" rel="noreferrer" href="https://twitter.com/nersisyan_karl">
           <i className="fab fa-twitter"></i>
         </a>
         <a
-          target="_blank"
+          target="_blank" rel="noreferrer"
           href="https://www.facebook.com/karlen.nersisyan.1999"
         >
           <i className="fab fa-facebook-square"></i>
         </a>
-        <a target="_blank" href="https://www.instagram.com/nersisyankarlen/">
+        <a target="_blank" rel="noreferrer" href="https://www.instagram.com/nersisyankarlen/">
           <i className="fab fa-instagram"></i>
         </a>
-        <a target="_blank" href="https://t.me/NKarlen">
+        <a target="_blank" rel="noreferrer" href="https://t.me/NKarlen">
           <i className="fab fa-telegram"></i>
         </a>
         <a
-          target="_blank"
+          target="_blank" rel="noreferrer"
           href="https://www.youtube.com/channel/UCfSN1lfHcKgrnkROAkJBJwQ"
         >
           <i className="fab fa-youtube"></i>
