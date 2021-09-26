@@ -4,7 +4,7 @@ import { getCategories } from "../../service/service";
 
 import classes from "./Header.module.css";
 
-function Header({ handleBtnClick, setFilter }) {
+function Header({ handleEmailClick, setFilter, handleBtnClick }) {
   const [headerElement, setHeaderElement] = useState("");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
@@ -43,7 +43,7 @@ function Header({ handleBtnClick, setFilter }) {
       >
         <i className={searchIcon}></i>
       </div>
-      <div className={classes.emailButton}>
+      <div onClick={handleEmailClick} className={classes.emailButton}>
         <i className={emailIcon}></i> EMAIL
       </div>
     </div>

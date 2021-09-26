@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
-import cn from 'classnames';
+import cn from "classnames";
 
 import { getCategories } from "../../service/service";
-import generateId from "../../helpers/idGenerator.helper";
+// import generateId from "../../helpers/idGenerator.helper";
 
 import classes from "./Menu.module.css";
 import Loading from "../Loading/Loading";
 
-function Menu({ setFilter, setContentThumbnail,isActive }) {
+function Menu({ setFilter, setContentThumbnail, isActive }) {
   const [categories, setCategories] = useState("");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
@@ -29,7 +29,8 @@ function Menu({ setFilter, setContentThumbnail,isActive }) {
       <ul className={classes.categoriesMenu}>
         <li
           className={classes.categoriesItem}
-          onClick={() => setContentThumbnail()}
+          // onClick={() => setContentThumbnail()}
+          onClick={() => setFilter("ALL")}
         >
           Home
         </li>
@@ -44,7 +45,7 @@ function Menu({ setFilter, setContentThumbnail,isActive }) {
               <li
                 className={classes.categoriesItem}
                 onClick={() => setFilter(e.name)}
-                key={generateId}
+                key={Math.random()}
               >
                 {e.name}
               </li>

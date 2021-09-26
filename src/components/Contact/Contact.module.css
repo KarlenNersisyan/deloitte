@@ -1,3 +1,7 @@
+.general {
+  z-index: 999;
+}
+
 .backContainer {
   top: 0;
   left: 0;
@@ -6,6 +10,10 @@
   position: absolute;
   background: rgba(255, 255, 255, 0.151);
   z-index: 99;
+}
+
+.hide {
+  display: none;
 }
 
 .formContainer {

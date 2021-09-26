@@ -16,6 +16,11 @@ function App() {
   const [error, setError] = useState(false);
   const [filter, setFilter] = useState("ALL");
   const [isActive, setIsActive] = useState(false);
+  const [isEmail, setIsEmail] = useState(false);
+
+  const handleEmailClick = () => {
+    setIsEmail(!isEmail);
+  };
 
   const handleBtnClick = () => {
     setIsActive(!isActive);
@@ -52,8 +57,12 @@ function App() {
 
   return (
     <>
-      <Header handleBtnClick={handleBtnClick} setFilter={setFilter} />
-      <Contact />
+      <Header
+        handleBtnClick={handleBtnClick}
+        setFilter={setFilter}
+        handleEmailClick={handleEmailClick}
+      />
+      <Contact isEmail={isEmail} />
       <div className={classes.App}>
         <Menu
           setFilter={setFilter}
@@ -66,11 +75,11 @@ function App() {
           loading={loading}
         />
       </div>
-      <ImageList
+      {/* <ImageList
         error={error}
         loading={loading}
         contentThumbnail={contentThumbnail}
-      />
+      /> */}
     </>
   );
 }

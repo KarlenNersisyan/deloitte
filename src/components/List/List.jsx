@@ -1,4 +1,4 @@
-import generateId from "../../helpers/idGenerator.helper";
+// import generateId from "../../helpers/idGenerator.helper";
 import Loading from "../Loading/Loading";
 
 import classes from "./List.module.css";
@@ -8,20 +8,20 @@ function List({ filteredContent, loading, error }) {
     <div className={classes.list}>
       {loading && <Loading />}
       {error && <p>ERROR ...</p>}
-      {filteredContent.map((e, i) => {
+      {filteredContent.map((e) => {
         return (
-          <>
+          <div key={Math.random()}>
             <div className={classes.nameCompany}>
-              <h2 key={generateId}>{e.catName}</h2>
+              <h2>{e.catName}</h2>
             </div>
             <div className={classes.descriptionCompany}>
-              <b key={generateId}>{e.description}</b>
+              <b>{e.description}</b>
             </div>
             <div className={classes.infoBlock}>
               {e.contentInf &&
                 e.contentInf.map((elem) => {
                   return (
-                    <div key={elem.id} className={classes.textName}>
+                    <div key={Math.random()} className={classes.textName}>
                       <div className={classes.imageBlockItem}>
                         <img
                           src={elem.image}
@@ -38,7 +38,7 @@ function List({ filteredContent, loading, error }) {
                   );
                 })}
             </div>
-          </>
+          </div>
         );
       })}
     </div>

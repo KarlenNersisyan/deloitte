@@ -9,18 +9,16 @@ function ImageList({ error, loading, contentThumbnail }) {
         {loading && <Loading />}
         {error && <p>ERROR ...</p>}
         {contentThumbnail &&
-          contentThumbnail.map((e, i) => {
+          contentThumbnail.map((e) => {
             return (
-              <>
-                <div key={i} className={classes.imageBlock}>
-                  <img
-                    className={classes.ContentThumbnail}
-                    src={e.url}
-                    width="300"
-                    height="160"
-                  />
-                </div>
-              </>
+              <div key={Math.random()} className={classes.imageBlock}>
+                <img
+                  className={classes.ContentThumbnail}
+                  src={e.url}
+                  width="300"
+                  height="160"
+                />
+              </div>
             );
           })}
       </div>
