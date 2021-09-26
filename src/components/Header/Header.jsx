@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { emailIcon, menuIcon, searchIcon } from "../../constants/utils";
+import { emailIcon, menuIcon, searchIcon } from "../../constants/utils.constant";
 import { getCategories } from "../../service/service";
 
 import classes from "./Header.module.css";
@@ -23,15 +23,15 @@ function Header({ handleEmailClick, setFilter, handleBtnClick, count }) {
 
   return (
     <div className={classes.header}>
-      <div onClick={handleBtnClick}>
+      <div className={classes.menuBlock} onClick={handleBtnClick}>
         <i className={menuIcon}></i>
       </div>
-      <div onClick={() => setFilter("ALL")}>
+      <div className={classes.logoBlock} onClick={() => setFilter("ALL")}>
         {loading && <b>Loading ...</b>}
         {error && <p>ERROR ...</p>}
         <img src={headerElement.header_logo} className={classes.compLogo}></img>
       </div>
-      <div>
+      <div className={classes.titleBlock}>
         <p className={classes.text}>
           {headerElement && headerElement.title.split("/")[0]}
         </p>

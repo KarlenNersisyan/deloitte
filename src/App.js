@@ -4,10 +4,10 @@ import Header from "./components/Header/Header";
 import List from "./components/List/List";
 import Menu from "./components/Menu/Menu";
 import { getAppContents, getContentThumbnail } from "./service/service";
+import Contact from "./components/Contact/Contact";
+import ImageList from "./components/ImageList/ImageList";
 
 import classes from "./App.module.css";
-import ImageList from "./components/ImageList/ImageList";
-import Contact from "./components/Contact/Contact";
 
 function App() {
   const [contentThumbnail, setContentThumbnail] = useState([]);

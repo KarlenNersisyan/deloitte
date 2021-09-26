@@ -2,6 +2,16 @@ import React from "react";
 import cn from "classnames";
 
 import classes from "./Message.module.css";
+import {
+  facebookIcon,
+  gitHubIcon,
+  instagramIcon,
+  linkedinIcon,
+  smileIcon,
+  telegramIcon,
+  twitterIcon,
+  youtubeIcon,
+} from "../../../constants/utils.constant";
 
 export default function Message({ message, handleMessage }) {
   return (
@@ -31,7 +41,7 @@ export default function Message({ message, handleMessage }) {
       </div>
 
       <div className={classes.favicon}>
-        <i className="fal fa-smile-wink"></i>
+        <i className={smileIcon}></i>
       </div>
 
       <div className={classes.info}>
@@ -39,33 +49,51 @@ export default function Message({ message, handleMessage }) {
       </div>
 
       <div className={classes.contacts}>
-        <a target="_blank" rel="noreferrer" href="https://github.com/KarlenNersisyan">
-          <i className="fab fa-github"></i>
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href="https://github.com/KarlenNersisyan"
+        >
+          <i className={gitHubIcon}></i>
         </a>
-        <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/karlen-nersisyan/">
-          <i className="fab fa-linkedin"></i>
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href="https://www.linkedin.com/in/karlen-nersisyan/"
+        >
+          <i className={linkedinIcon}></i>
         </a>
 
-        <a target="_blank" rel="noreferrer" href="https://twitter.com/nersisyan_karl">
-          <i className="fab fa-twitter"></i>
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href="https://twitter.com/nersisyan_karl"
+        >
+          <i className={twitterIcon}></i>
         </a>
         <a
-          target="_blank" rel="noreferrer"
+          target="_blank"
+          rel="noreferrer"
           href="https://www.facebook.com/karlen.nersisyan.1999"
         >
-          <i className="fab fa-facebook-square"></i>
-        </a>
-        <a target="_blank" rel="noreferrer" href="https://www.instagram.com/nersisyankarlen/">
-          <i className="fab fa-instagram"></i>
-        </a>
-        <a target="_blank" rel="noreferrer" href="https://t.me/NKarlen">
-          <i className="fab fa-telegram"></i>
+          <i className={facebookIcon}></i>
         </a>
         <a
-          target="_blank" rel="noreferrer"
+          target="_blank"
+          rel="noreferrer"
+          href="https://www.instagram.com/nersisyankarlen/"
+        >
+          <i className={instagramIcon}></i>
+        </a>
+        <a target="_blank" rel="noreferrer" href="https://t.me/NKarlen">
+          <i className={telegramIcon}></i>
+        </a>
+        <a
+          target="_blank"
+          rel="noreferrer"
           href="https://www.youtube.com/channel/UCfSN1lfHcKgrnkROAkJBJwQ"
         >
-          <i className="fab fa-youtube"></i>
+          <i className={youtubeIcon}></i>
         </a>
       </div>
     </div>

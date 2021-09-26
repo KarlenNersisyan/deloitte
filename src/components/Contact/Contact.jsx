@@ -1,9 +1,21 @@
 import React from "react";
 import cn from "classnames";
+import { useState } from "react";
+import Message from "./Message/Message";
 
 import classes from "./Contact.module.css";
-import Message from "./Message/Message";
-import { useState } from "react";
+import {
+  formTypes,
+  formTypesEmail,
+  plComp,
+  plJob,
+  plName,
+  plSurName,
+  plEmail,
+  btn1,
+  btn2,
+  btn,
+} from "../../constants/utils.constant";
 
 export default function Contact({ isEmail, handleEmailClick }) {
   const [message, setMessage] = useState(false);
@@ -28,17 +40,17 @@ export default function Contact({ isEmail, handleEmailClick }) {
         </div>
         <form action="/home">
           <div className={classes.former}>
-            <input type="text" placeholder="First Name *" autoFocus />
-            <input type="text" placeholder="Last Name *" />
-            <input type="text" placeholder="Company *" />
-            <input type="text" placeholder="Job Title *" />
+            <input type={formTypes} placeholder={plName} autoFocus />
+            <input type={formTypes} placeholder={plSurName} />
+            <input type={formTypes} placeholder={plComp} />
+            <input type={formTypes} placeholder={plJob} />
           </div>
           <div>
             <input
               onChange={(e) => setValue(e.target.value)}
-              type="email"
+              type={formTypesEmail}
               required
-              placeholder="Email *"
+              placeholder={plEmail}
               value={value}
             />
           </div>
@@ -67,13 +79,13 @@ export default function Contact({ isEmail, handleEmailClick }) {
           </div>
           <div className={classes.footer}>
             <div className={classes.event}>
-              <button type="submit" className={classes.btnIcon1}>
-                RESET
+              <button type={btn} className={classes.btnIcon1}>
+                {btn1}
               </button>
             </div>
             <div onClick={value ? handleMessage : null}>
-              <button type="submit" className={classes.btnIcon2}>
-                SUBMIT
+              <button type={btn} className={classes.btnIcon2}>
+                {btn2}
               </button>
             </div>
           </div>
