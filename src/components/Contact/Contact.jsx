@@ -71,7 +71,7 @@ export default function Contact({ isEmail, handleEmailClick }) {
                 RESET
               </button>
             </div>
-            <div onClick={value && handleMessage}>
+            <div onClick={value ? handleMessage : null}>
               <button type="submit" className={classes.btnIcon2}>
                 SUBMIT
               </button>
