@@ -1,0 +1,138 @@
+.backContainer {
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 1700vh;
+  position: absolute;
+  background: rgba(255, 255, 255, 0.151);
+  z-index: 99;
+}
+
+.formContainer {
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%);
+  width: 700px;
+  min-height: 550px;
+  border-radius: 5px;
+  border: 1px solid grey;
+  margin: 40px auto;
+  box-shadow: 0 0 15px white;
+  background: honeydew;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  border-bottom: 2px solid grey;
+  background: rgba(126, 119, 119, 0.897);
+}
+
+.headerElement {
+  font-size: 31px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.headerElement:hover {
+  color: white;
+}
+
+.headerElement3 {
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.1s;
+}
+
+.headerElement3:hover {
+  color: white;
+}
+
+.former {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px 10px;
+}
+
+input[type="text"] {
+  width: 300px;
+  border: none;
+  font-size: 20px;
+  margin: 23px 0px;
+  border-bottom: 1px solid grey;
+  outline: none;
+  background: transparent;
+  padding-left: 5px;
+}
+
+input[type="email"] {
+  width: 673px;
+  border: none;
+  font-size: 20px;
+  margin: 0px 10px;
+  border-bottom: 1px solid grey;
+  outline: none;
+  background: transparent;
+  padding-left: 5px;
+}
+
+h5 {
+  padding-left: 5px;
+}
+
+.info {
+  padding-left: 5px;
+}
+
+.policy {
+  padding: 50px 3px;
+}
+
+.labEl {
+  font-size: 12.5px;
+}
+
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 5px;
+}
+
+.event {
+  padding-right: 7px;
+}
+
+.btnIcon1 {
+  background: red;
+  color: white;
+  cursor: pointer;
+  border: none;
+  border-radius: 2px;
+  padding: 5px;
+}
+
+.btnIcon1:hover {
+  background: white;
+  color: red;
+  border: 1px solid red;
+}
+
+.btnIcon2 {
+  background: green;
+  color: white;
+  cursor: pointer;
+  border: none;
+  border-radius: 2px;
+  padding: 5px;
+}
+
+.btnIcon2:hover {
+  border: 1px solid green;
+  background: white;
+  color: green;
+}

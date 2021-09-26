@@ -7,6 +7,7 @@ import { getAppContents, getContentThumbnail } from "./service/service";
 
 import classes from "./App.module.css";
 import ImageList from "./components/ImageList/ImageList";
+import Contact from "./components/Contact/Contact";
 
 function App() {
   const [contentThumbnail, setContentThumbnail] = useState([]);
@@ -52,6 +53,7 @@ function App() {
   return (
     <>
       <Header handleBtnClick={handleBtnClick} setFilter={setFilter} />
+      <Contact />
       <div className={classes.App}>
         <Menu
           setFilter={setFilter}
