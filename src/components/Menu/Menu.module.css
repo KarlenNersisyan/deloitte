@@ -6,6 +6,14 @@
   display: none;
 }
 
+.active {
+  background: red;
+}
+
+.activeGen {
+  background: green;
+}
+
 .categoriesMenu {
   min-height: 600px;
   display: flex;
