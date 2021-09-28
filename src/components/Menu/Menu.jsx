@@ -2,10 +2,9 @@ import { useEffect, useState } from "react";
 import cn from "classnames";
 
 import { getCategories } from "../../service/service";
-// import generateId from "../../helpers/idGenerator.helper";
+import Loading from "../Loading/Loading";
 
 import classes from "./Menu.module.css";
-import Loading from "../Loading/Loading";
 
 function Menu({ setFilter, setContentThumbnail, isActive }) {
   const [categories, setCategories] = useState("");
