@@ -1,11 +1,28 @@
+import cn from "classnames";
 import Loading from "../Loading/Loading";
 
 import classes from "./ImageList.module.css";
 
-function ImageList({ error, loading, contentThumbnail }) {
+function ImageList({
+  error,
+  loading,
+  contentThumbnail,
+  imageList,
+  handleImageClick,
+}) {
   return (
     <>
-      <div className={classes.ContentThumbnailImageList}>
+      <div
+        className={cn([classes.ContentThumbnailImageList], {
+          [classes.hide]: !imageList,
+        })}
+      >
+        <div className={classes.ImageList}>
+          <h1>Images List</h1>
+        </div>
+        <button onClick={handleImageClick} className={classes.closeList}>
+          X
+        </button>
         {loading && <Loading />}
         {error && <p>ERROR ...</p>}
         {contentThumbnail &&
