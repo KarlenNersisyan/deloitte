@@ -1,5 +1,9 @@
 import { useEffect, useState } from "react";
-import { emailIcon, menuIcon, searchIcon } from "../../constants/utils.constant";
+import {
+  emailIcon,
+  menuIcon,
+  searchIcon,
+} from "../../constants/utils.constant";
 import { getCategories } from "../../service/service";
 
 import classes from "./Header.module.css";
@@ -43,9 +47,13 @@ function Header({ handleEmailClick, setFilter, handleBtnClick, count }) {
       >
         <i className={searchIcon}></i>
       </div>
-      <div onClick={handleEmailClick} className={classes.emailButton}>
+      <button
+        onClick={handleEmailClick}
+        className={classes.emailButton}
+        disabled={count ? false : true}
+      >
         <i className={emailIcon}></i> EMAIL <span>{count}</span>
-      </div>
+      </button>
     </div>
   );
 }
