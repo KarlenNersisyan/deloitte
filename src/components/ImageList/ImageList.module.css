@@ -1,8 +1,37 @@
 .ContentThumbnailImageList {
+  position: absolute;
+  top: 0;
+  left: 0;
   display: flex;
+  background: green;
   flex-wrap: wrap;
+  padding-top: 70px;
   flex-direction: row;
   justify-content: space-evenly;
+}
+
+.ImageList{
+  color: white;
+  position: absolute;
+  top:-15px;
+}
+
+.closeList {
+  width: 50px;
+  position: absolute;
+  right: 20px;
+  top: 5px;
+  cursor: pointer;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  background: rgb(240, 55, 55);
+  transition: 0.2s;
+  color: white;
+}
+
+.closeList:hover {
+  background: red;
 }
 
 .ContentThumbnail {
@@ -11,6 +40,11 @@
 
 .imageBlock {
   padding-bottom: 25px;
+  cursor: pointer;
+}
+
+.imageBlock:hover{
+  transform: scale(1.07);
 }
 
 .textName {

@@ -43,3 +43,17 @@
 .emailButton:hover {
   background: green;
 }
+
+.searchBlock {
+  width: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.inputText {
+  width: 200px !important;
+  background: white !important;
+  height: 30px !important;
+  border-radius: 5px !important;
+}
