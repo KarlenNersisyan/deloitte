@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import {
   emailIcon,
   menuIcon,
@@ -12,6 +12,7 @@ function Header({ handleEmailClick, setFilter, handleBtnClick, count }) {
   const [headerElement, setHeaderElement] = useState("");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
+  const [value, setValue] = useState();
 
   useEffect(() => {
     getCategories()
@@ -40,12 +41,16 @@ function Header({ handleEmailClick, setFilter, handleBtnClick, count }) {
           {headerElement && headerElement.title.split("/")[0]}
         </p>
       </div>
-      <div
-        onClick={() => {
-          alert("Hello everyone, good start to the day.");
-        }}
-      >
-        <i className={searchIcon}></i>
+      <div className={classes.searchBlock}>
+        <input
+          type="text"
+          onChange={(e) => {
+            setValue(e.target.value);
+          }}
+          className={classes.inputText}
+          value={value}
+        />
+        <i onClick={() => setFilter("ALL")} className={searchIcon}></i>
       </div>
       <button
         onClick={handleEmailClick}
