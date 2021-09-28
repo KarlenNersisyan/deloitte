@@ -76,6 +76,7 @@ function App() {
           isActive={isActive}
         />
         <List
+          count={count}
           filteredContent={filteredContent}
           error={error}
           loading={loading}
