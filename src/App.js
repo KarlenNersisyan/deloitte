@@ -18,6 +18,11 @@ function App() {
   const [isActive, setIsActive] = useState(false);
   const [isEmail, setIsEmail] = useState(false);
   const [count, setCount] = useState(0);
+  const [imageList, setImageList] = useState(false);
+
+  const handleImageClick = () => {
+    setImageList(!imageList);
+  };
 
   const handleEmailClick = () => {
     setIsEmail(!isEmail);
@@ -67,6 +72,8 @@ function App() {
         setFilter={setFilter}
         handleEmailClick={handleEmailClick}
         count={count}
+        appContents={appContents}
+        filter={filter}
       />
       <Contact isEmail={isEmail} handleEmailClick={handleEmailClick} />
       <div className={classes.App}>
@@ -76,18 +83,24 @@ function App() {
           isActive={isActive}
         />
         <List
+          handleImageClick={handleImageClick}
           count={count}
           filteredContent={filteredContent}
           error={error}
           loading={loading}
           addSum={addSum}
+          imageList={imageList}
         />
       </div>
-      {/* <ImageList
-        error={error}
-        loading={loading}
-        contentThumbnail={contentThumbnail}
-      /> */}
+      {imageList && (
+        <ImageList
+          error={error}
+          loading={loading}
+          contentThumbnail={contentThumbnail}
+          imageList={imageList}
+          handleImageClick={handleImageClick}
+        />
+      )}
     </>
   );
 }
