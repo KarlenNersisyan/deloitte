@@ -26,6 +26,18 @@ export default function Contact({ isEmail, handleEmailClick }) {
     setMessage(!message);
   };
 
+  const validateEmail = (email) => {
+    const res =
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return res.test(String(email).toLowerCase());
+  };
+
+  const handleEmailValid = () => {
+    if (validateEmail(value)) {
+      return handleMessage();
+    }
+  };
+
   return (
     <div className={cn([classes.backContainer], { [classes.hide]: !isEmail })}>
       <div className={classes.formContainer}>
@@ -94,7 +106,7 @@ export default function Contact({ isEmail, handleEmailClick }) {
             </div>
             <div>
               <button
-                onClick={handleMessage}
+                onClick={handleEmailValid}
                 type={btn}
                 className={classes.btnIcon2}
               >
