@@ -47,6 +47,7 @@
 .searchBlock {
   width: 280px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
 }
@@ -56,4 +57,11 @@
   background: white !important;
   height: 30px !important;
   border-radius: 5px !important;
+}
+
+.errorSearch {
+  color: red !important;
+  position: absolute;
+  top: 40px;
+  right: 170px;
 }
