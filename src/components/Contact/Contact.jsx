@@ -1,6 +1,7 @@
 import React from "react";
 import cn from "classnames";
 import { useState } from "react";
+
 import Message from "./Message/Message";
 
 import classes from "./Contact.module.css";
@@ -18,8 +19,8 @@ import {
 } from "../../constants/utils.constant";
 
 export default function Contact({ isEmail, handleEmailClick }) {
-  const [message, setMessage] = useState(false);
   const [value, setValue] = useState("");
+  const [message, setMessage] = useState(false);
 
   const handleMessage = () => {
     setMessage(!message);
@@ -38,7 +39,11 @@ export default function Contact({ isEmail, handleEmailClick }) {
             X
           </button>
         </div>
-        <form action="/home">
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+          }}
+        >
           <div className={classes.former}>
             <input type={formTypes} placeholder={plName} autoFocus />
             <input type={formTypes} placeholder={plSurName} />
@@ -47,7 +52,11 @@ export default function Contact({ isEmail, handleEmailClick }) {
           </div>
           <div>
             <input
-              onChange={(e) => setValue(e.target.value)}
+              id="email"
+              name="email"
+              onChange={(e) => {
+                setValue(e.target.value);
+              }}
               type={formTypesEmail}
               required
               placeholder={plEmail}
@@ -83,8 +92,12 @@ export default function Contact({ isEmail, handleEmailClick }) {
                 {btn1}
               </button>
             </div>
-            <div onClick={value ? handleMessage : null}>
-              <button type={btn} className={classes.btnIcon2}>
+            <div>
+              <button
+                onClick={handleMessage}
+                type={btn}
+                className={classes.btnIcon2}
+              >
                 {btn2}
               </button>
             </div>

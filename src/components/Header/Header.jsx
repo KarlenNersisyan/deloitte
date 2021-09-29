@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import {
   emailIcon,
   menuIcon,
@@ -8,7 +8,14 @@ import { getCategories } from "../../service/service";
 
 import classes from "./Header.module.css";
 
-function Header({ handleEmailClick, setFilter, handleBtnClick, count }) {
+function Header({
+  handleEmailClick,
+  setFilter,
+  handleBtnClick,
+  count,
+  searchCats,
+  notFoundSearch,
+}) {
   const [headerElement, setHeaderElement] = useState("");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
@@ -42,15 +49,19 @@ function Header({ handleEmailClick, setFilter, handleBtnClick, count }) {
         </p>
       </div>
       <div className={classes.searchBlock}>
-        <input
-          type="text"
-          onChange={(e) => {
-            setValue(e.target.value);
-          }}
-          className={classes.inputText}
-          value={value}
-        />
-        <i onClick={() => setFilter("ALL")} className={searchIcon}></i>
+        <div>
+          <input
+            type="text"
+            onChange={(el) => searchCats(el)}
+            className={classes.inputText}
+            value={value}
+            placeholder=" Search categories"
+          />
+          <i onClick={() => setFilter("ALL")} className={searchIcon}></i>
+        </div>
+        <div>
+          {notFoundSearch && <p className={classes.errorSearch}> Not found </p>}
+        </div>
       </div>
       <button
         onClick={handleEmailClick}
