@@ -21,9 +21,20 @@ import {
 export default function Contact({ isEmail, handleEmailClick }) {
   const [value, setValue] = useState("");
   const [message, setMessage] = useState(false);
+  const [name, setName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [company, setCompany] = useState("");
+  const [job, setJob] = useState("");
 
   const handleMessage = () => {
     setMessage(!message);
+  };
+
+  const handleResetClick = () => {
+    setName("");
+    setLastName("");
+    setCompany("");
+    setJob("");
   };
 
   const validateEmail = (email) => {
@@ -57,10 +68,39 @@ export default function Contact({ isEmail, handleEmailClick }) {
           }}
         >
           <div className={classes.former}>
-            <input type={formTypes} placeholder={plName} autoFocus />
-            <input type={formTypes} placeholder={plSurName} />
-            <input type={formTypes} placeholder={plComp} />
-            <input type={formTypes} placeholder={plJob} />
+            <input
+              type={formTypes}
+              placeholder={plName}
+              autoFocus
+              value={name}
+              onChange={(e) => {
+                setName(e.target.value);
+              }}
+            />
+            <input
+              type={formTypes}
+              placeholder={plSurName}
+              value={lastName}
+              onChange={(e) => {
+                setLastName(e.target.value);
+              }}
+            />
+            <input
+              type={formTypes}
+              placeholder={plComp}
+              value={company}
+              onChange={(e) => {
+                setCompany(e.target.value);
+              }}
+            />
+            <input
+              type={formTypes}
+              placeholder={plJob}
+              value={job}
+              onChange={(e) => {
+                setJob(e.target.value);
+              }}
+            />
           </div>
           <div>
             <input
@@ -99,7 +139,13 @@ export default function Contact({ isEmail, handleEmailClick }) {
             </div>
           </div>
           <div className={classes.footer}>
-            <div className={classes.event}>
+            <div
+              onClick={() => {
+                setValue("");
+                handleResetClick();
+              }}
+              className={classes.event}
+            >
               <button type={btn} className={classes.btnIcon1}>
                 {btn1}
               </button>
